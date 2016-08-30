@@ -1,0 +1,27 @@
+
+### LOGGING
+logging:
+  level:
+    org.hibernate: info
+    org.springframework: info
+
+spring:
+  main:
+    banner-mode: "ON"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+  jpa:
+    show_sql: false
+    format_sql: false
+    hibernate:
+      ddl-auto: validate #validate schema with hibernate
+    properties: # native jpa properties
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+      org:
+        hibernate:
+          flushMode: COMMIT
+    open-in-view: false
